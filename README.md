@@ -12,6 +12,7 @@
 + Accelerometer interfacing is done.
 + Interfacing with Python is done.
 + Code for Transmitter, Receiver microcontroller is done.
++ Transmission can be done from distance upto 2.5 meters(approx).
 ```` 
 NOTE: Basic objective of the prototype has been achived. Now this need a little bit of modification to make it as much as user freindly as we can.
 ````
