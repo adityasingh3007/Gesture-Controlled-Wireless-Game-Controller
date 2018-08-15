@@ -16,25 +16,49 @@ unsigned char ADC_Read(unsigned char channel)  /* ADC Read function */
 }
 int main(void)
 {
-  unsigned char X,Y,Z;
+  int X,Y,Z;
   DDRB=0xFF;
   Serial.begin(9600);
   ADC_Init();   /* Initialize ADC */
-
+  int flag=0;
   while(1)
   {
-    X= ADC_Read(0);  /* Read X, Y, Z axis ADC value */
-    Y= ADC_Read(1);
-    Z= ADC_Read(2);
-    if(X<73&&Z<90){
-      PORTB|=0b00100000;
+    X= ADC_Read(0)-83;  /* Read X, Y, Z axis ADC value */
+    Y= ADC_Read(1)-83;
+    Z= ADC_Read(2)-77;
+
+    /*if(X>-4&& X<4 && Y<4 && Y>-4) {
+      if(flag==1) {
+        Serial.println("Resetted");
+      }
+      flag=0;
+      
     }
+
+    if(X<-13) {
+      if(!flag) {
+        //
+        Serial.println("Left");
+         _delay_ms(10);
+        flag=1;
+      }
+    }
+  else
+    if(X>13) {
+      if(!flag) {
+        //
+        Serial.println("Right");
+        _delay_ms(10);
+        flag=1;
+      }
+    }*/
+    
     Serial.print("X: ");
     Serial.print(X);Serial.print('\t');
     Serial.print("Y: ");
     Serial.print(Y);Serial.print('\t');
     Serial.print("Z:");
     Serial.println(Z);
-    _delay_ms(100);
+    _delay_ms(10);
   }
 }

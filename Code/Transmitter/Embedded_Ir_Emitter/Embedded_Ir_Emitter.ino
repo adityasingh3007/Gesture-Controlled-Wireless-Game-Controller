@@ -35,7 +35,7 @@ ISR(TIMER1_COMPA_vect) {
 
 ISR(TIMER2_OVF_vect) {
   ++count;
-  if(count>=62) {
+  if(count>=2) {
     count=0;
     TCCR2B=0x00;
   }

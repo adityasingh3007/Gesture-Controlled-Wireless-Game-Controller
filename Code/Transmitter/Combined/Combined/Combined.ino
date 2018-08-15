@@ -3,21 +3,24 @@
 /*
  * Binary Values Used
  * Address: 01001101
- * ON: 01001111
- * OFF:01000110
- * INC_BRIGHT:01101010
- * DEC_BRIGHT:01001010
+ * LEFT: 01001111
+ * RIGHT:01000110
+ * FOR_LEFT:01101010
+ * FOR_RIGHT:01001010
+ * SHOOT: 01100110 
  * 
  * Hexadecimal Values
- * ON: B24DF20D
- * OFF:B24D629D
- * INC_BRIGHT:B24D56A9
- * DEC_BRIGHT:B24D52AD
+ * LEFT: B24DF20D
+ * RIGHT: B24D629D
+ * FOR_LEFT: B24D56A9
+ * FOR_RIGHT: B24D52AD
+ * SHOOT: B24D6699
  */
-uint32_t code_ON=0b10110010010011011111001000001101;
-uint32_t code_OFF=0b10110010010011010110001010011101;
-uint32_t code_INC_BRIGHT=0b10110010010011010101011010101001;
-uint32_t code_DEC_BRIGHT=0b10110010010011010101001010101101;
+uint32_t code_LEFT=0b10110010010011011111001000001101;
+uint32_t code_RIGHT=0b10110010010011010110001010011101;
+uint32_t code_FOR_LEFT=0b10110010010011010101011010101001;
+uint32_t code_FOR_RIGHT=0b10110010010011010101001010101101;
+uint32_t code_SHOOT=0b10110010010011010110011010011001;
 uint32_t code;
 
 volatile int count=0;
@@ -85,17 +88,20 @@ void delay_time() {
 }
 
 void send_code(int code_value) {
-  if(code_value==1) {
-    code=code_ON;
+  if(code_value==0) {
+    code=code_LEFT;
   }
-  else if(code_value==0) {
-     code=code_OFF;
+  else if(code_value==1) {
+     code=code_RIGHT;
   }
   else if(code_value==2) {
-     code=code_INC_BRIGHT;
+     code=code_FOR_LEFT;
   }
   else if(code_value==3) {
-     code=code_DEC_BRIGHT;
+     code=code_FOR_RIGHT;
+  }
+  else if(code_value==4) {
+     code=code_SHOOT;
   }
   start_pulse();
     start_delay();
@@ -130,11 +136,12 @@ unsigned char ADC_Read(unsigned char channel)  /* ADC Read function */
 
 int main() {
   
-  unsigned char X,Y,Z;
+  int X,Y,Z;
   DDRB=0xFF;
   Serial.begin(9600);
   ADC_Init();   /* Initialize ADC */
-  
+  int flag=0;
+   
   TCCR0A=(1<<WGM01);
   TCCR1A=(1<<WGM12);
   TIMSK0=(1<<OCIE0A);
@@ -146,18 +153,41 @@ int main() {
   PORTD=0x00;
   Serial.begin(9600);
   while(1) {
-    X= ADC_Read(0);  /* Read X, Y, Z axis ADC value */
-    Y= ADC_Read(1);
-    Z= ADC_Read(2);
-    if(X<70){
-      send_code(0);
+    X= ADC_Read(0)-83;  /* Read X, Y, Z axis ADC value */
+    Y= ADC_Read(1)-83;
+    Z= ADC_Read(2)-77;
+    
+    if(X<-10 && Y<3) {
+      ++flag;
+      if(flag>=5) {
+        flag=0;
+        send_code(0);
+      }
     }
-    Serial.print("X: ");
-    Serial.print(X);Serial.print('\t');
-    Serial.print("Y: ");
-    Serial.print(Y);Serial.print('\t');
-    Serial.print("Z:");
-    Serial.println(Z);
+  else if(X>13 && Y<3) {
+      ++flag;
+      if(flag>=5) {
+        flag=0;
+        send_code(1);
+      }
+    }
+  else if(X<-8 && Y>8) {
+      ++flag;
+      if(flag>=5) {
+        flag=0;
+        send_code(2);
+      }
+    }
+  else if(X>8 && Y>8) {
+      ++flag;
+      if(flag>=5) {
+        flag=0;
+        send_code(3);
+      }
+    }
+  else if(Y>13 && X<5) {
+        send_code(4);
+    }
     delay_time();   
   }
   PORTD=0x00;

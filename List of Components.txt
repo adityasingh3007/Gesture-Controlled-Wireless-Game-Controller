@@ -1,15 +1,18 @@
-1. Uno -2   900
-2. IMU      200
-3. Multimeter 	150
-5. Discrete Coponebt 200
-6.Breadboard       70
+0. Nano - 1 390
+1. Uno -1   460
+2. ADXL335      380
+3. Multimeter 	140
+5. Discrete Component 200
+6. Breadboard       70
 7. Box		   30
-8.  Jumper Wire    150
+8. Jumper Wire    150
 9. Band 	70
+10. Wire Cutter   60
+11. Screw Driver  30
 
 
 
 Discrete Component
 1. LED
 2. Reistors
-3. 0
+3. 
