@@ -157,35 +157,35 @@ int main() {
     Y= ADC_Read(1)-83;
     Z= ADC_Read(2)-77;
     
-    if(X<-10 && Y<3) {
+    if(X<-8 && Y<5) {
       ++flag;
-      if(flag>=5) {
+      if(flag>=1) {
         flag=0;
         send_code(0);
       }
     }
-  else if(X>13 && Y<3) {
+  else if(X>10 && Y<5) {
       ++flag;
-      if(flag>=5) {
+      if(flag>=1) {
         flag=0;
         send_code(1);
       }
     }
   else if(X<-8 && Y>8) {
       ++flag;
-      if(flag>=5) {
+      if(flag>=1) {
         flag=0;
         send_code(2);
       }
     }
   else if(X>8 && Y>8) {
       ++flag;
-      if(flag>=5) {
+      if(flag>=1) {
         flag=0;
         send_code(3);
       }
     }
-  else if(Y>13 && X<5) {
+  else if(Y>10 && X<5) {
         send_code(4);
     }
     delay_time();   

@@ -102,18 +102,23 @@ int main() {
     if(new_key) {
        if( new_key == 0xB24DF20D ) {
           USARTWriteChar('0');
+          USARTWriteChar('\n');
        }
        else if( new_key == 0xB24D629D ) {
           USARTWriteChar('1');
+           USARTWriteChar('\n');
        }
        else if( new_key == 0xB24D56A9 ) {
           USARTWriteChar('2');
+           USARTWriteChar('\n');
        }
        else if( new_key == 0xB24D52AD ) {
           USARTWriteChar('3');
+           USARTWriteChar('\n');
        }
        else if( new_key == 0xB24D6699 ) {
           USARTWriteChar('4');
+           USARTWriteChar('\n');
        }
        new_key=0;
     }
