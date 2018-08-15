@@ -1,5 +1,6 @@
 #include <avr/io.h>   /* Include AVR std. library file */
 #include <util/delay.h>   /* Include defined delay header file */
+
 void ADC_Init()     /* ADC Initialization function */
 {
   ADMUX =(1<<REFS0)|(1<<ADLAR);   /* Vref: Avcc, ADC channel: 0 */
