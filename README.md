@@ -19,7 +19,7 @@ NOTE: Basic objective of the prototype has been achived. Now this need a little 
 ## Things to be Done
 + Instead of Accelerometer, we can think of using Joystick.
 + Also a keypad control can be added so, if the user wants to control it with the button he can
-+ In NEC protocol we have the address to target which TSOP module we want to send the data. So to prevent interference of different IR Signals with different TSOP, we have to have atleast 90 address (*8-bit binary form*) in our hand.
++ In NEC protocol we have the address to target which TSOP module we want to send the data. So to prevent interference of different IR Signals with different TSOP, we have to make atleast 90(this will varry as per the number of registrations) different address (*8-bit binary form*). hand.
 
 ## Components to be Used:
 + Arduino UNO
