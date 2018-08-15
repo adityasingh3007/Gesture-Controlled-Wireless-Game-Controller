@@ -1,0 +1,15 @@
+1. Uno -2   900
+2. IMU      200
+3. Multimeter 	150
+5. Discrete Coponebt 200
+6.Breadboard       70
+7. Box		   30
+8.  Jumper Wire    150
+9. Band 	70
+
+
+
+Discrete Component
+1. LED
+2. Reistors
+3. 0
