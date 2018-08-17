@@ -9,10 +9,15 @@
 9. Band 	70
 10. Wire Cutter   60
 11. Screw Driver  30
-
+12. TSOP 1738
+13. IR LED
 
 
 Discrete Component
 1. LED
 2. Reistors
-3. 
+3. Capacitors
+4. Push Button
+5. 9V Battery
+6. Motor(?)
+7. 
