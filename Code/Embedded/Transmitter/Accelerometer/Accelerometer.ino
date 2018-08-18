@@ -24,8 +24,8 @@ int main(void)
   int flag=0;
   while(1)
   {
-    X= ADC_Read(0)-83;  /* Read X, Y, Z axis ADC value */
-    Y= ADC_Read(1)-83;
+    X= ADC_Read(0)-86;  /* Read X, Y, Z axis ADC value */
+    Y= ADC_Read(1)-85;
     Z= ADC_Read(2)-77;
 
     /*if(X>-4&& X<4 && Y<4 && Y>-4) {

@@ -13,13 +13,13 @@ def press(a):
         keyboard.press(Key.right)
         
     elif(a == 2):
-        keyboard.press(Key.ctrl)
+        keyboard.press(Key.up)
         keyboard.press(Key.left)
     elif(a == 3):
-        keyboard.press(Key.ctrl)
+        keyboard.press(Key.up)
         keyboard.press(Key.right)
     elif(a == 4):
-        keyboard.press(Key.ctrl)
+        keyboard.press(Key.up)
 
 if __name__ == '__main__':
     arduino = serial.Serial()
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     arduino.setDTR(0)
     
     try:
-        arduino = serial.Serial('COM3', timeout=1, baudrate=9600)
+        arduino = serial.Serial('COM10', timeout=1, baudrate=9600)
     except:
         print('Serial not available')
 
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             h= getVal
             keyboard.release(Key.left)
             keyboard.release(Key.right)
-            keyboard.release(Key.ctrl)
+            keyboard.release(Key.up)
         print(getVal)
         try:
             press(getVal)

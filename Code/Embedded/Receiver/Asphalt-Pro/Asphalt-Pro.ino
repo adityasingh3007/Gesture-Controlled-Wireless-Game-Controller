@@ -124,6 +124,14 @@ int main() {
           USARTWriteChar('5');
           USARTWriteChar('\n');
        }
+       else if( new_key == 0xB24DF0F0 ) {
+          USARTWriteChar('6');
+          USARTWriteChar('\n');
+       }
+       else if( new_key == 0xB24DA694  ) {
+          USARTWriteChar('7');
+          USARTWriteChar('\n');
+       }
        new_key=0;
     }
     
