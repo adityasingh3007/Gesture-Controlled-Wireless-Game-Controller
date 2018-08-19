@@ -2,9 +2,8 @@
 
 
 ## Challenges:
-+ To make the controlling as smooth as possible.
++ Controlling can be further improvised.
 + To make sure that during workshop, no signal should interfere with the other TSOP present over there.
-+ Try with multiple games.
 
 ## Progress till date:
 + IR Transmission code is complete.
@@ -12,14 +11,16 @@
 + Accelerometer interfacing is done.
 + Interfacing with Python is done.
 + Code for Transmitter, Receiver microcontroller is done.
-+ Transmission can be done from distance upto 2.5 meters(approx).
++ Transmission can be done from distance up to 3.5 meters(approx).
++ Asphalt, Star Defender, Motor racing game can be played using these codes.
 ```` 
-NOTE: Basic objective of the prototype has been achived. Now this need a little bit of modification to make it as much as user freindly as we can.
+NOTE: Basic objective of the prototype has been achived. Now this need a 
+	  little bit of modification to make it as much as user freindly as we can.
 ````
 ## Things to be Done
 + Instead of Accelerometer, we can think of using Joystick.
 + Also a keypad control can be added so, if the user wants to control it with the button he can
-+ In NEC protocol we have the address to target which TSOP module we want to send the data. So to prevent interference of different IR Signals with different TSOP, we have to make atleast 90(this will varry as per the number of registrations) different address (*8-bit binary form*). hand.
++ In NEC protocol we have the address to target which TSOP module we want to send the data. So to prevent interference of different IR Signals with different TSOP, we have to make atleast 90(this will varry as per the number of registrations) different address (*8-bit binary form*). 
 
 ## Components to be Used:
 + Arduino UNO
