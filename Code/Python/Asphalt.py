@@ -35,7 +35,7 @@ if __name__ == '__main__':
     arduino.setDTR(0)
     
     try:
-        arduino = serial.Serial('COM10', timeout=1, baudrate=9600)
+        arduino = serial.Serial('COM3', timeout=1, baudrate=9600)
     except:
         print('Serial not available')
 

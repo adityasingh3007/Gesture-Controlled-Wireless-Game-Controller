@@ -169,35 +169,35 @@ int main() {
     Y= ADC_Read(1)-83;
     Z= ADC_Read(2)-77;
     
-    if(X<-4&& Y<4) {
+    if(X<-4&& Y<2) {
       send_code(0);
       Serial.print(0);
     }
-  else if(X>4 && Y<4) {
+  else if(X>6 && Y<2) {
       send_code(1);
       Serial.print(1);
     }
-  else if(X<-4 && Y>=4) {
+  else if(X<-4 && Y>=2) {
       send_code(2);
       Serial.print(2);
     }
-  else if(X>4 && Y>=4) {
+  else if(X>6 && Y>=2) {
       send_code(3);
       Serial.print(3);
     }
-  else if(Y>4 & Y<=15) {
+  else if(Y>2 & Y<=10) {
       send_code(4);
       Serial.print(4);
   }
-  else if(X<=4 & Y<= 4 & X>=-4 & Y>=-2) {
+  else if(X<=6 & Y<= 2 & X>=-4 & Y>=-3) {
         send_code(5);
         Serial.print(5);
      }
-  else if(Y<-2) {
+  else if(Y<-3) {
       send_code(6);
       Serial.print(6);
   }
-  else if(Y>15) {
+  else if(Y>10) {
       send_code(7);
       Serial.print(7);
   }
