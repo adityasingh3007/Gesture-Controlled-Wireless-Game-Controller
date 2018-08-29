@@ -10,6 +10,7 @@
  * ACC: 01100110 
  * STABLE:11111111
  * BRAKE:11110000
+ * BOOST:01100101
  * 
  * Hexadecimal Values
  * LEFT: B24DF20D
