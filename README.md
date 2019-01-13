@@ -1,9 +1,9 @@
-# Wireless Gesture Controlled Game Controller
+# Gesture Controlled Wireless Game Controller
 
 
 ## Challenges:
 + Controlling can be further improvised.
-+ To make sure that during workshop, no signal should interfere with the other TSOP present over there.
++ To make sure no other signal should interfere with the other TSOP present nearby.
 
 ## Progress till date:
 + IR Transmission code is complete.
@@ -15,10 +15,8 @@
 + Asphalt, Star Defender, Motor racing game can be played using these codes.
 ```` 
 NOTE: Basic objective of the prototype has been achived. Now this need a 
-	little bit of modification to make it as much as user freindly as we can.
+      little bit of modification to make it as much as user freindly as we can.
 ````
-## Things to be Done
-+ In NEC protocol we have the address to target which TSOP module we want to send the data. So to prevent interference of different IR Signals with different TSOP, we have to make atleast 90(this will varry as per the number of registrations) different address (*8-bit binary form*). 
 
 ## Components to be Used:
 + Arduino UNO
@@ -33,7 +31,6 @@ NOTE: Basic objective of the prototype has been achived. Now this need a
 + 9 V Battery
 + Breadboard
 + PCBs
-
 
 
 ## Repository Organized.
